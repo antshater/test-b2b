@@ -1,0 +1,17 @@
+.film-wrapper {
+  display: flex;
+}
+
+.property-item {
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
+.property-item label {
+  font-weight: bold;
+}
+
+.film-page {
+  display: flex;
+  justify-content: center;
+}

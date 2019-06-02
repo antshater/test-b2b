@@ -1,0 +1,24 @@
+<div class="film-page">
+  <div *ngIf="film">
+    <div>
+      <a routerLink="..">Поиск</a> / {{ film.Title }}
+    </div>
+    <h1>{{ film.Title }}</h1>
+    <div class="film-wrapper">
+      <div>
+        <img *ngIf="film.Poster" [src]="film.Poster"/>
+      </div>
+      <div>
+        <div *ngFor="let parameter of parameters">
+          <div *ngIf="parameter.value" class="property-item">
+            <label>{{ parameter.label }}</label>: {{ parameter.value }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <mat-spinner *ngIf="film === undefined" [diameter]="20"></mat-spinner>
+  <div *ngIf="film === null">
+    Фильм не найден :( <a routerLink="..">Поиск</a>
+  </div>
+</div>

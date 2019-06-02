@@ -1,0 +1,14 @@
+<mat-form-field>
+  <input matInput placeholder="Поиск" aria-label="State" [matAutocomplete]="auto" [formControl]="searchCtrl">
+  <mat-autocomplete (optionSelected)="onOptionSelected($event)" #auto="matAutocomplete">
+    <mat-option *ngFor="let film of autoComplete$ | async" [value]="film">
+      {{ film.Title }}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+<h2>Мои фильмы</h2>
+<mat-list>
+  <a mat-list-item [routerLink]="['/', film.imdbID]" *ngFor="let film of list$ | async">
+    {{ film.Title }}
+  </a>
+</mat-list>
